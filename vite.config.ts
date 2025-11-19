@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: { alias: { '@': fileURLToPath(new URL('.', import.meta.url)) } },
     build: {
-      minify: 'esbuild'   // << add this line
+      minify: 'esbuild',
+      sourcemap: false
     }
   };
 });
