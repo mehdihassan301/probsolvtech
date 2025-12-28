@@ -1,13 +1,13 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import PricingPage from './PricingPage';
+import type { Page } from '@/src/legacy/types';
+import PricingPage from '@/src/legacy/pages/PricingPage';
 
 export default function PricingClient() {
   const router = useRouter();
 
-  // Matches the old Vite App.tsx setPage() behavior (no design/animation changes).
-  const setPage = (page: any, id?: string) => {
+  const setPage = (page: Page, id?: string) => {
     switch (page) {
       case 'Home':
         router.push('/');
@@ -62,5 +62,5 @@ export default function PricingClient() {
     }
   };
 
-  return <PricingPage setPage={setPage as any} />;
+  return <PricingPage setPage={setPage} />;
 }
